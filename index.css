@@ -10,6 +10,10 @@ body {
     margin-left: 30px;
 }
 
+td{
+  vertical-align: top;
+}
+
 #videoContainer {
 	width: 500px;
 	height: 375px;
@@ -59,7 +63,7 @@ div.operationContent {
 }
 
 #copyWriteText {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 12px;
 }
 
