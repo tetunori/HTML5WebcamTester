@@ -71,3 +71,7 @@ const padZero2Digit = ( num ) => {
   return ( num < 10 ? "0" : "" ) + num;
 }
 
+// Show readme
+document.getElementById( "btShowReadMe" ).addEventListener( "click", async ev => {
+  window.open('https://github.com/tetunori/HTML5WebcamTester/blob/master/README.md','_blank');
+});
