@@ -20,8 +20,8 @@ This software is released under the MIT License, see LICENSE.
 Tetsunori NAKAYAMA.
 
 # References
-HTML5  Specification  
-https://www.w3.org/TR/gamepad/
+On HTML5 video tag  
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/video
 
 Capturing image from video streaming  
 https://qiita.com/iwaimagic/items/1d16a721b36f04e91aed
