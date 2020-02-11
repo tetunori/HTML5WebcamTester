@@ -4,7 +4,7 @@ Version 1.0.0
 
 # Description
 HTML5 Webcam function tester. You can also capture and download image as a PNG file.  
-See [this article](https://qiita.com/tetunori_lego/items/c0cf6999a7667756441f) in detail. You can try [here](https://tetunori.github.io/HTML5WebcamTester/).
+See [this article](https://qiita.com/tetunori_lego/items/4d0da075224abbaa4389) in detail. You can try [here](https://tetunori.github.io/HTML5WebcamTester/).
 
 # Usage
 1. Connect WebCam to your PC.
