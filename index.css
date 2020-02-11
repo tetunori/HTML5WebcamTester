@@ -1,0 +1,66 @@
+
+/* Noto Sans JP - Google Fonts */ 
+@import url( https://fonts.googleapis.com/earlyaccess/notosansjp.css );
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+#videoContainer {
+	width: 500px;
+	height: 375px;
+    border: 5px solid;
+    border-color: black;
+}
+
+#video {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+}
+
+#hiddenContainer {
+    display: none;
+}
+
+#titleText {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#descriptionText {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* WARNING: in table tag */ 
+div.operation {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+/* WARNING: in table tag */ 
+div.operationTitleText {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* WARNING: in table tag */ 
+div.operationContent {
+    text-align: left;
+    margin-left: 20px;
+}
+
+#copyWriteText {
+    margin-top: 40px;
+    font-size: 12px;
+}
+
+#copyWriteText a { color: black } 
