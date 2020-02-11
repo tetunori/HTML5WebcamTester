@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5 Webcam Tester</title>
+
+        <!-- Webapp settings -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favion -->
+        <link rel="icon" href="./images/favicon.ico">
+
+        <!-- Stylesheet -->
+        <link href="https://cdn.muicss.com/mui-0.10.0/css/mui.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.muicss.com/mui-0.10.0/js/mui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+    </head>
+
+    <body>        
+        <!-- Title -->
+        <div id="titleText" class="titleText"> 
+            HTML5 Webcam Tester
+        </div>
+
+        <!-- Description -->
+        <div id="descriptionText" class="descriptionText"> 
+            HTML5でWebcamを扱うテスト。キャプチャしてPNGファイルとしてダウンロードできるよ。<br>
+            HTML5 Webcam function tester. You can also capture and download image as a PNG file.
+        </div>
+
+        <!-- Contents -->
+        <table><tr>
+            <!-- Left region: Video Container -->
+            <td>
+                <!-- Streaming video -->
+                <div id="videoContainer">
+                    <video autoplay="true" id="video"></video>
+                </div>
+                
+                <!-- Hidden items for capture => download -->
+                <div id="hiddenContainer">
+                    <a id="hiddenLink"></a>
+                    <canvas id="hiddenCanvas" width="500" height="375"></canvas>
+                </div>
+            </td>
+
+            <!-- Right region: Operation Region -->
+            <td>
+                <div id="operation" class="operation"> 
+                    <div class="operationTitleText"> 
+                        1. Connect WebCam & give a permission.
+                    </div>
+                    <div class="operationContent"> 
+                        <img src="./images/permission.png" width="300px">
+                    </div>
+
+                    <div class="operationTitleText"> 
+                        2. Anytime, you can capture & download it.
+                    </div>
+                    <div class="operationContent"> 
+                        <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" id="btCapture" disabled="true">Capture</button>
+                    </div>
+
+                    <div class="operationTitleText"> 
+                        Appendix.
+                    </div>
+                    <div class="operationContent"> 
+                        <button class="mui-btn mui-btn--small mui-btn--raised" id="btShowOperation">Show "ReadMe"
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr></table>
+        
+        <!-- Copywrite -->
+        <div id="copyWriteText"> 
+            <a href="https://github.com/tetunori/HTML5WebcamTester" target="_blank">Hosted on GitHub</a>. Version 1.0.0. Copyright (c) 2020 Tetsunori NAKAYAMA. MIT License.
+        </div>  
+
+        <!-- Script -->
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
