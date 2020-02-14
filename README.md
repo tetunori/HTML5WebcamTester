@@ -13,6 +13,13 @@ See [this article](https://qiita.com/tetunori_lego/items/4d0da075224abbaa4389) i
 <BR><img src="./images/permission.png" width="300px">
 4. Press "Capture" button after the video streaming started. Captured image will be downloaded instantly.
 
+## Supplement
+If you have multiple cameras in PC, you can switch to another camera in the following steps.
+1. Press a 'Camera' icon next to the URL, then press 'Manage/管理' button.
+<BR><img src="./images/cameraStatus.png" width="300px">
+2. Select a camera you would like to use in the Chrome camera setting.
+<BR><img src="./images/cameraSetting.png" width="300px">
+
 # Licence
 This software is released under the MIT License, see LICENSE.
 
