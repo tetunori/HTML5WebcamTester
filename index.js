@@ -6,11 +6,13 @@ const startStreamingVideo = () => {
       
   if( navigator.mediaDevices.getUserMedia ){
 
-    navigator.mediaDevices.getUserMedia( { video: true } )
+    const constrains = { audio: true, video: { facingMode: "environment" } };
+
+    navigator.mediaDevices.getUserMedia( constrains )
     .then( ( stream ) => {
         video.srcObject = stream;
     } );
-
+    
   }
 
 }
