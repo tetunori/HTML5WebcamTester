@@ -73,19 +73,67 @@ video.onloadedmetadata = () => {
       link.href = hiddenCanvas.toDataURL();
       
       // document.getElementById('hiddenCanvas').src = hiddenCanvas.toDataURL();
-      link.download = getYYYYMMDD_hhmmss( true ) + ".png";
+      link.download = getYYYYMMDD_hhmmss( true, false ) + ".png";
       link.click();
 
     });
 
     btCapture.disabled = false;
 
+    const INTERVAL = 200;
+    setInterval( decodeQR, INTERVAL );
+
   }
 
 }
 
+
+// QR decoding
+let previousDecodedData = undefined;
+const decodeQR = () => {
+
+  // Capture: draw to hidden canvas
+  const canvas = document.getElementById( 'hiddenCanvasForQR' );
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage( video, 0, 0, canvas.width, canvas.height );
+
+  // Decode: 
+  const imageData = ctx.getImageData( 0, 0, canvas.width, canvas.height );
+  const code = jsQR( imageData.data, imageData.width, imageData.height, {
+    inversionAttempts: "dontInvert",
+  } );
+  
+  if ( code ) {
+    // console.log( code );
+
+    if( document.getElementById( 'cbIgnoreSameData' ).checked &&
+        ( code.data === previousDecodedData ) ){
+        // Ignore
+    }else{
+
+      const decodedDataText = document.getElementById( 'decodedData' );
+      if( previousDecodedData === undefined ){
+        decodedDataText.value = '';
+      }
+
+      decodedDataText.value = getYYYYMMDD_hhmmss( true, true ) 
+                                + ': ' + code.data + '\n' + decodedDataText.value;
+
+    }
+
+    previousDecodedData = code.data;
+
+  } else {
+    // console.log( 'no data' );
+  }
+
+}
+
+
 // Reference => https://gist.github.com/froop/962669
-const getYYYYMMDD_hhmmss = ( isNeedUS ) => {
+const getYYYYMMDD_hhmmss = ( isNeedUS, isNeedmsec ) => {
 
   const now = new Date();
   let retVal = '';
@@ -102,16 +150,34 @@ const getYYYYMMDD_hhmmss = ( isNeedUS ) => {
   retVal += padZero2Digit( now.getMinutes() );
   retVal += padZero2Digit( now.getSeconds() );
 
+  // .sss (msec)
+  if( isNeedmsec ){
+    retVal += '.' + padZero3Digit( now.getMilliseconds() );
+  }
+
   return retVal;
 
 }
 
-// Zero padding function
+// Zero padding function 2 digits
 const padZero2Digit = ( num ) => {
   return ( num < 10 ? "0" : "" ) + num;
 }
+
+// Zero padding function 3 digits
+const padZero3Digit = ( num ) => {
+  if( num > 99 ){
+    return "" + num;
+  }else if( num > 9 ){
+    return "0" + num;
+  }else{
+    return "00" + num;
+  }
+}
+
 
 // Show readme
 document.getElementById( "btShowReadMe" ).addEventListener( "click", async ev => {
   window.open('https://github.com/tetunori/HTML5WebcamTester/blob/master/README.md','_blank');
 });
+
