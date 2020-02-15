@@ -46,6 +46,10 @@ td{
   margin-top: 20px;
 }
 
+#decodedData {
+  font-size: 12px;
+}
+
 /* WARNING: in table tag */ 
 div.operation {
   font-size: 15px;
@@ -55,6 +59,13 @@ div.operation {
 /* WARNING: in table tag */ 
 div.operationTitleText {
   margin-top: 20px;
+  margin-bottom: 6px;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* WARNING: in table tag */ 
+div.operationTitleTextTop {
   margin-bottom: 6px;
   text-align: left;
   font-weight: 500;

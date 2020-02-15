@@ -11,6 +11,9 @@
         <!-- Favion -->
         <link rel="icon" href="./images/favicon.ico">
 
+        <!-- QR decoding -->
+        <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
+
         <!-- Stylesheet -->
         <link href="https://cdn.muicss.com/mui-0.10.0/css/mui.min.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.muicss.com/mui-0.10.0/js/mui.min.js"></script>
@@ -44,13 +47,14 @@
                 <div id="hiddenContainer">
                     <a id="hiddenLink"></a>
                     <canvas id="hiddenCanvas"></canvas>
+                    <canvas id="hiddenCanvasForQR"></canvas>
                 </div>
             </td>
 
             <!-- Right region: Operation Region -->
             <td>
                 <div id="operation" class="operation"> 
-                    <div class="operationTitleText"> 
+                    <div class="operationTitleTextTop"> 
                         1. Connect WebCam & give a permission.
                     </div>
                     <div class="operationContent"> 
@@ -62,6 +66,16 @@
                     </div>
                     <div class="operationContent"> 
                         <button class="mui-btn mui-btn--small mui-btn--primary mui-btn--raised" id="btCapture" disabled="true">Capture</button>
+                    </div>
+
+                    <div class="operationTitleText"> 
+                        3. Anytime, you can decode QR codes.
+                    </div>
+                    <div class="operationContent"> 
+                      <textarea id="decodedData" cols="30" rows="5" wrap="off">Result of decoding QR codes.</textarea>                   
+                      <br> 
+                      <input type="checkbox" id="cbIgnoreSameData" checked="checked">
+                      <label for="cbIgnoreSameData">: Ignore Continuous same data decoding.</label>
                     </div>
 
                     <div class="operationTitleText"> 
@@ -78,7 +92,10 @@
         
         <!-- Copywrite -->
         <div id="copyWriteText"> 
-            <a href="https://github.com/tetunori/HTML5WebcamTester" target="_blank">Hosted on GitHub</a>. Version 1.1.0. Copyright (c) 2020 Tetsunori NAKAYAMA. MIT License.
+            <a href="https://github.com/tetunori/HTML5WebcamTester" target="_blank">Hosted on GitHub</a>. 
+            Version 1.2.0. Copyright (c) 2020 Tetsunori NAKAYAMA. MIT License.
+            <br>
+            QR Code is registered trademarks of DENSO WAVE INCORPORATED in Japan and in other countries.
         </div>  
 
         <!-- Script -->

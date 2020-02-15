@@ -1,5 +1,5 @@
 # HTML5 Webcam Tester
-Version 1.1.0  
+Version 1.2.0  
 <img src="./images/screenShot.png" width="800px">
 
 # Description
@@ -30,6 +30,9 @@ Tetsunori NAKAYAMA.
 # References
 On HTML5 video tag  
 https://developer.mozilla.org/ja/docs/Web/HTML/Element/video
+
+jsQR @cozmo
+https://github.com/cozmo/jsQR
 
 Capturing image from video streaming  
 https://qiita.com/iwaimagic/items/1d16a721b36f04e91aed
