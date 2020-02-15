@@ -3,7 +3,8 @@ Version 1.2.0
 <img src="./images/screenShot.png" width="800px">
 
 # Description
-HTML5 Webcam function tester. You can also capture and download image as a PNG file.  
+HTML5 Webcam function tester.   
+You can also capture and download image as a PNG file. Furthermore, you can decode QR codes, now.  
 See [this article](https://qiita.com/tetunori_lego/items/4d0da075224abbaa4389) in detail. You can try [here](https://tetunori.github.io/HTML5WebcamTester/).
 
 # Usage
@@ -13,6 +14,7 @@ See [this article](https://qiita.com/tetunori_lego/items/4d0da075224abbaa4389) i
 <BR><img src="./images/permission.png" width="300px">
 4. Press "Capture" button after the video streaming started. Captured image will be downloaded instantly.
 5. Press "Flip Camera" icon upper left on the video region, then you can switch camera(especially for smart devices).
+6. QR codes are automatically recognized and the result data will be shown in the textarea region.
 
 ## Supplement
 If you have multiple cameras in PC, you can switch to another camera in the following steps.
