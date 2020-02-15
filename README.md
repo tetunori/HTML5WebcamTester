@@ -1,5 +1,5 @@
 # HTML5 Webcam Tester
-Version 1.0.0  
+Version 1.1.0  
 <img src="./images/screenShot.png" width="800px">
 
 # Description
@@ -12,6 +12,7 @@ See [this article](https://qiita.com/tetunori_lego/items/4d0da075224abbaa4389) i
 3. Give a permission. Press "Allow"/"許可" on the dialog below.
 <BR><img src="./images/permission.png" width="300px">
 4. Press "Capture" button after the video streaming started. Captured image will be downloaded instantly.
+5. Press "Flip Camera" icon upper left on the video region, then you can switch camera(especially for smart devices).
 
 ## Supplement
 If you have multiple cameras in PC, you can switch to another camera in the following steps.
