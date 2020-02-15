@@ -1,14 +1,11 @@
+const video = document.querySelector( "#video" );
 
 // On Streaming
 const startStreamingVideo = () => {
-
-  const video = document.querySelector( "#video" );
       
   if( navigator.mediaDevices.getUserMedia ){
 
-    const constrains = { audio: true, video: { facingMode: "environment" } };
-
-    navigator.mediaDevices.getUserMedia( constrains )
+    navigator.mediaDevices.getUserMedia( { video: { facingMode: "environment" } } )
     .then( ( stream ) => {
         video.srcObject = stream;
     } );
@@ -28,14 +25,15 @@ video.onloadedmetadata = () => {
     
     // Capture: draw to hidden canvas
     const hiddenCanvas = document.getElementById( 'hiddenCanvas' );
+    hiddenCanvas.width = video.videoWidth;
+    hiddenCanvas.height = video.videoHeight;
     const ctx = hiddenCanvas.getContext('2d');
-    const WIDTH = 500;
-    const HEIGHT = 375;
-    ctx.drawImage( video, 0, 0, WIDTH, HEIGHT );
-    
+    ctx.drawImage( video, 0, 0, video.videoWidth, video.videoHeight );
+
     // Download: load DataURL and convert to png
     const link = document.getElementById( 'hiddenLink' );
     link.href = hiddenCanvas.toDataURL();
+    
     // document.getElementById('hiddenCanvas').src = hiddenCanvas.toDataURL();
     link.download = getYYYYMMDD_hhmmss( true ) + ".png";
     link.click();
